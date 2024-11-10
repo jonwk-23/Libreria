@@ -1,0 +1,330 @@
+{
+	"info": {
+		"_postman_id": "4b14b2a7-a115-460f-91ac-e523265a1349",
+		"name": "Libreria",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38162455",
+		"_collection_link": "https://schoolhub-1544.postman.co/workspace/SchoolHub-Workspace~839fb616-9d12-4c10-8b60-731ac6b707d6/collection/38162455-4b14b2a7-a115-460f-91ac-e523265a1349?action=share&source=collection_link&creator=38162455"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Jonathan\",\r\n  \"lastName\": \"Domingo\",\r\n  \"email\": \"jon@gmail.com\",\r\n  \"password\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"jon@gmail.com\",\r\n    \"password\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Book",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqb25AZ21haWwuY29tIiwicm9sZSI6IkFETUlOIiwiZXhwIjoxNzMxMzEwMzQwfQ.5sfevrOnNIs7jnxR4DJOdTvDPzaHNwSTW950wEo9mJE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titulo\": \"Viaje al Centro de la Tierra\",\r\n    \"autor\": \"Julio Verne\",\r\n    \"isbn\": \"978-0-618-26030-0\",\r\n    \"disponibilidad\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/book",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Book",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqb25AZ21haWwuY29tIiwicm9sZSI6IkFETUlOIiwiZXhwIjoxNzMxMzEwMzQwfQ.5sfevrOnNIs7jnxR4DJOdTvDPzaHNwSTW950wEo9mJE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/book/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"book",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Id Book",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqb25AZ21haWwuY29tIiwicm9sZSI6IkFETUlOIiwiZXhwIjoxNzMxMzEwMzQwfQ.5sfevrOnNIs7jnxR4DJOdTvDPzaHNwSTW950wEo9mJE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/book/67312676079c6a2113b2135b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"book",
+						"67312676079c6a2113b2135b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put Book",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqb25AZ21haWwuY29tIiwicm9sZSI6IkFETUlOIiwiZXhwIjoxNzMxMzEwMzQwfQ.5sfevrOnNIs7jnxR4DJOdTvDPzaHNwSTW950wEo9mJE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titulo\": \"Viaje al C.T\",\r\n    \"autor\": \"Julio Verne\",\r\n    \"isbn\": \"978-0-618-26030-0\",\r\n    \"disponibilidad\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/book/67312676079c6a2113b2135b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"book",
+						"67312676079c6a2113b2135b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Book",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqb25AZ21haWwuY29tIiwicm9sZSI6IkFETUlOIiwiZXhwIjoxNzMxMzEwMzQwfQ.5sfevrOnNIs7jnxR4DJOdTvDPzaHNwSTW950wEo9mJE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/book/67312775079c6a2113b2135c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"book",
+						"67312775079c6a2113b2135c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Prestar",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqb25AZ21haWwuY29tIiwicm9sZSI6IkFETUlOIiwiZXhwIjoxNzMxMzEwMzQwfQ.5sfevrOnNIs7jnxR4DJOdTvDPzaHNwSTW950wEo9mJE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/loans/prestar/67312676079c6a2113b2135b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"loans",
+						"prestar",
+						"67312676079c6a2113b2135b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Devolver",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqb25AZ21haWwuY29tIiwicm9sZSI6IkFETUlOIiwiZXhwIjoxNzMxMzEwMzQwfQ.5sfevrOnNIs7jnxR4DJOdTvDPzaHNwSTW950wEo9mJE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/loans/devolver/67312676079c6a2113b2135b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"loans",
+						"devolver",
+						"67312676079c6a2113b2135b"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
